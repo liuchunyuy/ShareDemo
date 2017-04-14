@@ -39,10 +39,10 @@
 -(void)go{
 
     NSArray* imageArray = @[[UIImage imageNamed:@"最新1.png"]];
-    //（注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
+    //如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]
     if (imageArray) {
         NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-        //[NSURL URLWithString:@"http://mob.com"]
+        
         [shareParams SSDKSetupShareParamsByText:@"分享内容" images:imageArray url:nil title:@"二维码"type:SSDKContentTypeAuto];
         //有的平台要客户端分享需要加此方法，例如微博
         [shareParams SSDKEnableUseClientShare];

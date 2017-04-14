@@ -33,7 +33,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [ShareSDK registerApp:@"1ce1c48acdb1c"
+    [ShareSDK registerApp:shareSDK_App_Key
      
           activePlatforms:@[@(SSDKPlatformSubTypeWechatSession),   //只要分享到微信好友
                             @(SSDKPlatformSubTypeQQFriend),]       //只要分享到qq好友
@@ -56,11 +56,11 @@
          
          switch (platformType)
          {
-             case SSDKPlatformTypeWechat:
+             case SSDKPlatformTypeWechat: // 切记：此处不可写 SSDKPlatformSubTypeWechatSession
                  [appInfo SSDKSetupWeChatByAppId:Wechat_ID
                                        appSecret:Wechat_Secret];
                  break;
-             case SSDKPlatformTypeQQ:
+             case SSDKPlatformTypeQQ:     //切记：此处不可写 SSDKPlatformSubTypeQQFriend
                  [appInfo SSDKSetupQQByAppId:QQApp_ID
                                       appKey:QQApp_Key
                                     authType:SSDKAuthTypeBoth];
